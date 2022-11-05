@@ -1,7 +1,7 @@
-DROP SCHEMA IF EXISTS data_sua_nha_kttkpm_script;
-CREATE SCHEMA data_sua_nha_kttkpm_script;
+DROP SCHEMA IF EXISTS data_sua_nha_kttkpm_db;
+CREATE SCHEMA data_sua_nha_kttkpm_db;
 
-USE data_sua_nha_kttkpm_script;
+USE data_sua_nha_kttkpm_db;
 
 DROP TABLE IF EXISTS authority;
 CREATE TABLE authority(
@@ -18,21 +18,23 @@ CREATE TABLE customer (
 	CusName nvarchar(50) NOT NULL,
 	Phone char(11) NOT NULL,
 	Sex nvarchar(5) NOT NULL,
-	Username varchar(50) NOT NULL,
+	-- Username varchar(50) NOT NULL,
+    IdUser int NOT NULL,
     PRIMARY KEY (IdCus)
 );
-INSERT INTO customer VALUES (NULL, 'Hải', '0912345678', 'Nam', 'hai');
+INSERT INTO customer VALUES (NULL, 'Hải', '0912345678', 'Nam', 4);
 
 DROP TABLE IF EXISTS user;
 CREATE TABLE user (
+	IdUser int NOT NULL auto_increment,
 	UserName varchar(50) NOT NULL,
 	PassWord varchar(68) NOT NULL,
-	Enabled tinyint NOT NULL
+    PRIMARY KEY (IdUser)
 );
-INSERT INTO user VALUES ('ghuy', '123456', 1);
-INSERT INTO user VALUES ('qtuan', 'tuan123', 1);
-INSERT INTO user VALUES ('thieu', '123456', 1);
-INSERT INTO user VALUES ('hai', 'hai123', 1);
+INSERT INTO user VALUES (NULL, 'ghuy', '123456');
+INSERT INTO user VALUES (NULL, 'qtuan', 'tuan123');
+INSERT INTO user VALUES (NULL, 'thieu', '123456');
+INSERT INTO user VALUES (NULL, 'hai', 'hai123');
 
 DROP TABLE IF EXISTS product;
 CREATE TABLE product (
