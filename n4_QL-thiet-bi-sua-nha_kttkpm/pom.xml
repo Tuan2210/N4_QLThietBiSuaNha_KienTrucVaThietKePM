@@ -47,6 +47,14 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>5.4.1.Final</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
