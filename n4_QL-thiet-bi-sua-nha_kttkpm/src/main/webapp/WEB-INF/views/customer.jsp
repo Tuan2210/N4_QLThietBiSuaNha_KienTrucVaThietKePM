@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Trang chủ</title>
+<title>Quản lý khách hàng</title>
 
 <!--Bootstrap CSS-->
 <link rel="stylesheet"
@@ -11,9 +11,7 @@
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
 
-<!-- link hover animation: https://css-tricks.com/css-hover-effects-background-masks-3d/ -->
-
-<link rel="stylesheet" href="/resources/css/home.css">
+<link rel="stylesheet" href="/resources/css/customer.css">
 
 </head>
 <body>
@@ -23,20 +21,8 @@
 			<jsp:include page="header.jsp" />
 		</div>
         <div class="content">
-            <ol>
-                <li>
-                    <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/60/null/external-user-interface-kiranshastry-gradient-kiranshastry.png" />
-                    <a href="${pageContext.request.contextPath}/user">Quản lý người dùng</a>
-                </li>
-                <li>
-                    <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/null/external-tools-construction-and-tools-kiranshastry-gradient-kiranshastry.png" />
-                    <a href="${pageContext.request.contextPath}/product">Quản lý sản phẩm</a>
-                </li>
-                <li>
-                    <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/60/null/external-user-interface-kiranshastry-gradient-kiranshastry-1.png" />
-                    <a href="${pageContext.request.contextPath}/customer">Quản lý khách hàng</a>
-                </li>
-            </ol>
+        	<a href="/home" class="btnBackToHome">Trở về trang chủ</a>
+            <h1>nkhách hàng</h1>
         </div>
     </div>
     

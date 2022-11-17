@@ -10,4 +10,19 @@ public class HomeController {
 	public String homePage() {
 		return "home";
 	}
+
+	@GetMapping("/user")
+	public String userPage() {
+		return "user";
+	}
+	
+	@GetMapping("/product")
+	public String productPage() {
+		return "product";
+	}
+	
+	@GetMapping("/customer")
+	public String customerPage() {
+		return "customer";
+	}
 }
