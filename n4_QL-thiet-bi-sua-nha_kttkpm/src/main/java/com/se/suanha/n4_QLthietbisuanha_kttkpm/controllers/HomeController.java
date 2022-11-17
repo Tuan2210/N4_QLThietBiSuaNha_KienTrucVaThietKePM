@@ -16,10 +16,10 @@ public class HomeController {
 		return "user";
 	}
 	
-	@GetMapping("/product")
-	public String productPage() {
-		return "product";
-	}
+//	@GetMapping("/product")
+//	public String productPage() {
+//		return "product";
+//	}
 	
 	@GetMapping("/customer")
 	public String customerPage() {

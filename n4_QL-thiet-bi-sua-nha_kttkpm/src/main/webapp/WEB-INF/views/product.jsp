@@ -22,7 +22,50 @@
 		</div>
         <div class="content">
         	<a href="/home" class="btnBackToHome">Trở về trang chủ</a>
-            <h1>sản phẩm</h1>
+        	
+            <!-- <h1>sản phẩm</h1> -->
+            
+            <div>
+                <a href="" class="btn btn-primary btnAdd">Thêm sản phẩm</a>
+                <table border="1" class="table table-bordered">
+                    <tr>
+                        <th class="align-middle text-center" style="width: 80px;">Mã sản phẩm</th>
+                        <th class="align-middle text-center" style="width: 300px;">Tên sản phẩm</th>
+                        <th class="align-middle text-center">Hình ảnh</th>
+                        <th class="align-middle text-center" style="width: 450px;">Chi tiết sản phẩm</th>
+                        <th class="align-middle text-center">Giá</th>
+                        <th class="align-middle text-center">
+                            <input type="submit" value="Xóa" class="btn btn-danger align-items-center">
+                        </th>
+                        <th class="align-middle text-center"></th>
+                    </tr>
+                    <tr>
+                        <td class="align-middle text-center">
+                            1
+                        </td>
+                        <td class="align-middle text-center">
+                            Bộ tua vít đa năng sửa chữa điện thoại 25 in 1 vít từ tính chất liệu cao cấp S2
+                        </td>
+                        <td class="align-middle text-center" text-center>
+                            ...
+                        </td>
+                        <td class="align-middle text-center" text-center>
+                            Chất liệu: thép nhậu khẩu HRC 60, hộp kim nhôm Nặng: 300g Kích thước: 168 x 67 x 17 mm. Đầu vít: 24 đầu, gồm có 4 lớp. Màu sắc: xám.
+                        </td>
+                        <td class="align-middle text-center" text-center>
+                            64.900 ₫
+                        </td>
+                        <td class="align-middle text-center">
+                            <div class="row justify-content-center">
+                                <input type="checkbox" name="">
+                            </div>
+                        </td>
+                        <td class="align-middle text-center" text-center>
+                            <a href="" class="btn btn-secondary">Sửa</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
     

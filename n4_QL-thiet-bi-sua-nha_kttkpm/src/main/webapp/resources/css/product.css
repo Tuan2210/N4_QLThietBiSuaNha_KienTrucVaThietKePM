@@ -1,3 +1,10 @@
+.content {
+	border-top: 1px solid cyan;
+	flex-direction: column;
+	margin-top: 2%;
+	height: 100%;
+}
+
 .btnBackToHome {
 	text-decoration: none;
 	background-color: black;
@@ -5,7 +12,7 @@
 	border-radius: 10px;
 	color: cyan;
 	display: inline-block;
-	font-size: 1.5em;
+	font-size: 1em;
 	padding: 8px;
 	transition: 0.35s;
 }
@@ -15,3 +22,15 @@
 	background-color: white;
 	color: black;
 }
+
+.btnAdd {
+	display: block;
+	margin: 0 auto;
+	text-decoration: none;
+	width: 150px;
+	margin-bottom: 10px;
+}
+
+
+
+

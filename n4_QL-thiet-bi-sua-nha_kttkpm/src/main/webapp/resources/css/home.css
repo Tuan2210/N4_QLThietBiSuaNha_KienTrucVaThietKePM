@@ -30,7 +30,7 @@
 		text-decoration: none;
 		font-weight: bold; 
 		--s: 0.1em; 
-		--c: #1095c1;
+		--c: cyan;
 		color: #0000;
 		padding-bottom: var(--s);
 		background: linear-gradient(90deg, var(--c) 50%, #000 0) calc(100% - var(--_p, 0%))/200% 100%, linear-gradient(var(--c) 0 0) 0% 100%/var(--_p, 0%) var(--s) no-repeat;
@@ -45,6 +45,7 @@
 	
 	.content a:hover {
 		text-decoration: none;
+		color: cyan
 	}
 	
 	
