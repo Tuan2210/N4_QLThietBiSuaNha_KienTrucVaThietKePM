@@ -22,7 +22,7 @@
 		</div>
         <div class="content">
         	<a href="/home" class="btnBackToHome">Trở về trang chủ</a>
-            <h1>nkhách hàng</h1>
+            <h1>khách hàng</h1>
         </div>
     </div>
     

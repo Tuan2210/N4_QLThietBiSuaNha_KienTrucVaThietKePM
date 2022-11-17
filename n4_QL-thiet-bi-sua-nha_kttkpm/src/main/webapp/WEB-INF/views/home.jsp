@@ -26,15 +26,15 @@
             <ol>
                 <li>
                     <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/60/null/external-user-interface-kiranshastry-gradient-kiranshastry.png" />
-                    <a href="${pageContext.request.contextPath}/user">Quản lý người dùng</a>
+                    <a href="${pageContext.request.contextPath}/api/users">Quản lý người dùng</a>
                 </li>
                 <li>
                     <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/null/external-tools-construction-and-tools-kiranshastry-gradient-kiranshastry.png" />
-                    <a href="${pageContext.request.contextPath}/product">Quản lý sản phẩm</a>
+                    <a href="${pageContext.request.contextPath}/api/products">Quản lý sản phẩm</a>
                 </li>
                 <li>
                     <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/60/null/external-user-interface-kiranshastry-gradient-kiranshastry-1.png" />
-                    <a href="${pageContext.request.contextPath}/customer">Quản lý khách hàng</a>
+                    <a href="${pageContext.request.contextPath}/api/customers">Quản lý khách hàng</a>
                 </li>
             </ol>
         </div>

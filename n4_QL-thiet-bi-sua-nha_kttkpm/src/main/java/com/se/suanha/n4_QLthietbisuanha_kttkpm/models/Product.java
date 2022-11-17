@@ -36,6 +36,9 @@ public class Product {
 
 	@Column(name = "describedetails")
 	private String describeDetails;
+	
+	@Column(name = "link")
+	private String link;
 
 	@Column(name = "statusprd")
 	private String statusPrd;
