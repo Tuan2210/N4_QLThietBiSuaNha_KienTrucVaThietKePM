@@ -33,7 +33,7 @@
 						<th>Tên sản phẩm</th>
 						<th>Hình ảnh</th>
 						<th>Mô tả sản phẩm</th>
-						<th style="width: 80px;">Giá</th>
+						<th style="width: 120px;">Giá</th>
 						<th style="width: 80px;"><input type="submit" value="Xóa" class="btn btn-danger align-items-center"></th>
 						<th style="width: 80px;"></th>
 					</tr>
