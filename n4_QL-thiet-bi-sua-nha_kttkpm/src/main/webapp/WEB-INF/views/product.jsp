@@ -30,19 +30,19 @@
 				<table border="1" class="table table-bordered">
 					<tr>
 						<th class="align-middle text-center" style="width: 80px;">Mã sản phẩm</th>
-						<th class="align-middle text-center" style="width: 300px;">Tên sản phẩm</th>
+						<th class="align-middle text-center">Tên sản phẩm</th>
 						<th class="align-middle text-center">Hình ảnh</th>
-						<th class="align-middle text-center" style="width: 450px;">Mô tả sản phẩm</th>
-						<th class="align-middle text-center">Giá</th>
-						<th class="align-middle text-center"><input type="submit" value="Xóa" class="btn btn-danger align-items-center"></th>
-						<th class="align-middle text-center"></th>
+						<th class="align-middle text-center">Mô tả sản phẩm</th>
+						<th class="align-middle text-center" style="width: 80px;">Giá</th>
+						<th class="align-middle text-center" style="width: 80px;"><input type="submit" value="Xóa" class="btn btn-danger align-items-center"></th>
+						<th class="align-middle text-center" style="width: 80px;"></th>
 					</tr>
 					<c:forEach var="product" items="${objProducts}">
 						<tr>
 							<td class="align-middle text-center">${product.idPrd}</td>
 							<td class="align-middle">${product.title}</td>
-							<td class="align-middle text-justify">
-								<img alt="" src="/resources/${product.link}" width="150" height="150">
+							<td class="align-middle text-center" style="width: 200px; height: 200px;">
+								<img alt="" src="/resources/${product.link}" class="align-middle" width="200" height="200">
 							</td>
 							<td class="align-middle text-justify">${product.describeDetails}</td>
 							<td class="align-middle text-center">${product.price}</td>
