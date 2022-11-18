@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +23,35 @@
 		</div>
         <div class="content">
         	<a href="/home" class="btnBackToHome">Trở về trang chủ</a>
-            <h1>khách hàng</h1>
+            <div style="display: flex; align-items: center; flex-direction: column;">
+                <a href="${pageContext.request.contextPath}/api/add-customer" class="btn btn-primary text-center btnAdd">Thêm Khách Hàng</a>
+				<table border="1" class="table table-bordered">
+					<tr class="align-middle text-center">
+						<th style="width: 80px;">Mã khách hàng</th>
+						<th>Tên khách hàng</th>
+						<th>Số điện thoại</th>
+						<th>Giới tính</th>
+						<th style="width: 80px;">Mã người dùng</th>
+						<th style="width: 80px;"><input type="submit" value="Xóa" class="btn btn-danger align-items-center"></th>
+						<th style="width: 80px;"></th>
+					</tr>
+					<c:forEach var="customer" items="${objCustomers}">
+						<tr>
+							<td class="align-middle text-center">${customer.idCus}</td>
+							<td class="align-middle">${customer.cusName}</td>
+							<td class="align-middle text-center">${customer.phone}</td>
+							<td class="align-middle text-justify">${customer.sex}</td>
+							<td class="align-middle text-center">${customer.idUser}</td>
+							<td class="align-middle text-center">
+								<div class="row justify-content-center">
+									<input type="checkbox" name="">
+								</div>
+							</td>
+							<td class="align-middle text-center"><a href="" class="btn btn-secondary">Sửa</a></td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
         </div>
     </div>
     

@@ -22,3 +22,8 @@
 	background-color: white;
 	color: black;
 }
+.btnAdd {
+	text-decoration: none;
+	width: 150px;
+	margin-bottom: 10px;
+}
