@@ -28,14 +28,14 @@
             <div style="display: flex; align-items: center; flex-direction: column;">
                 <a href="${pageContext.request.contextPath}/api/add-product" class="btn btn-primary text-center btnAdd">Thêm sản phẩm</a>
 				<table border="1" class="table table-bordered">
-					<tr>
-						<th class="align-middle text-center" style="width: 80px;">Mã sản phẩm</th>
-						<th class="align-middle text-center">Tên sản phẩm</th>
-						<th class="align-middle text-center">Hình ảnh</th>
-						<th class="align-middle text-center">Mô tả sản phẩm</th>
-						<th class="align-middle text-center" style="width: 80px;">Giá</th>
-						<th class="align-middle text-center" style="width: 80px;"><input type="submit" value="Xóa" class="btn btn-danger align-items-center"></th>
-						<th class="align-middle text-center" style="width: 80px;"></th>
+					<tr class="align-middle text-center">
+						<th style="width: 80px;">Mã sản phẩm</th>
+						<th>Tên sản phẩm</th>
+						<th>Hình ảnh</th>
+						<th>Mô tả sản phẩm</th>
+						<th style="width: 80px;">Giá</th>
+						<th style="width: 80px;"><input type="submit" value="Xóa" class="btn btn-danger align-items-center"></th>
+						<th style="width: 80px;"></th>
 					</tr>
 					<c:forEach var="product" items="${objProducts}">
 						<tr>

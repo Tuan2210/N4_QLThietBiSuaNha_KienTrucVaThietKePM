@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> --%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,19 +26,21 @@
 		<!-- content -->
         <div class="content">
         	<a href="/home" class="btnBackToHome">Trở về trang chủ</a>
-            <p class="text-center"><b>Nhập thông tin để thêm</b></p>
+            <p class="text-center"><b>Nhập thông tin theo mẫu</b></p>
             <div style="width: 100%;">
-                <form action="/" method="POST" class="col-3 was-validated" enctype="multipart/form-data" style="margin: 0 auto;" novalidate>
-                    <input type="text" name="" placeholder="Nhập tên sản phẩm" id="" class="form-control" required>
-                    </br>
-                    <input type="text" name="" placeholder="Nhập giá" id="" class="form-control" required>
-                    </br>
-                    <textarea style="height: 80px;" name="" placeholder="Nhập mô tả" id="" class="form-control" required></textarea>
-                    </br>
-                    <input type="file" name="" placeholder="Tải ảnh lên" id="" required>
-                    </br>
-                    <input type="submit" value="Thêm" class="btn-info" style="padding: 8px; margin-top: 5%; border-radius: 8px;">
-                </form>
+                <form:form 
+                	action="${pageContext.request.contextPath}/api/handleAddProduct" method="get" modelAttribute="product"
+                	class="col-3 was-validated" enctype="multipart/form-data" style="margin: 0 auto;" novalidate="novalidate">
+                    	<input type="text" name="title" placeholder="Nhập tên sản phẩm" id="" class="form-control" required="required">
+                    	</br>
+                    	<input type="text" name="price" placeholder="Nhập giá" id="" class="form-control" required="required">
+                    	</br>
+                    	<textarea name="describeDetails" placeholder="Nhập mô tả" id="" class="form-control" style="height: 80px;" required="required"></textarea>
+                    	</br>
+                    	<input type="file" name="link" placeholder="Tải ảnh lên" id="" required="required">
+                    	</br>
+                    	<input type="submit" value="Thêm" class="btn-info" style="padding: 8px; margin-top: 5%; border-radius: 8px;">
+                </form:form>
             </div>
         </div>
     </div>
