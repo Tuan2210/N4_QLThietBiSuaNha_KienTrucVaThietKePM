@@ -29,13 +29,11 @@
                 <a href="${pageContext.request.contextPath}/api/add-product" class="btn btn-primary text-center btnAdd">Thêm sản phẩm</a>
 				<table border="1" class="table table-bordered">
 					<tr class="align-middle text-center">
-						<th style="width: 80px;">Mã sản phẩm</th>
-						<th>Tên sản phẩm</th>
-						<th>Hình ảnh</th>
-						<th>Mô tả sản phẩm</th>
-						<th style="width: 120px;">Giá</th>
-						<th style="width: 80px;"><input type="submit" value="Xóa" class="btn btn-danger align-items-center"></th>
-						<th style="width: 80px;"></th>
+						<th class="align-middle" style="width: 80px;">Mã sản phẩm</th>
+						<th class="align-middle">Tên sản phẩm</th>
+						<th class="align-middle">Hình ảnh</th>
+						<th class="align-middle">Mô tả sản phẩm</th>
+						<th class="align-middle" style="width: 120px;">Giá</th>
 					</tr>
 					<c:forEach var="product" items="${objProducts}">
 						<tr>
@@ -47,9 +45,7 @@
 							<td class="align-middle text-justify">${product.describeDetails}</td>
 							<td class="align-middle text-center">${product.price}</td>
 							<td class="align-middle text-center">
-								<div class="row justify-content-center">
-									<input type="checkbox" name="">
-								</div>
+								<a href="${pageContext.request.contextPath}/api/handleDeleteProduct/${product.idPrd}" class="btn btn-danger align-items-center">Xóa</a>
 							</td>
 							<td class="align-middle text-center"><a href="" class="btn btn-secondary">Sửa</a></td>
 						</tr>
