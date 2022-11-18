@@ -24,15 +24,15 @@
 		
 		<!-- content -->
         <div class="content">
-        	<a href="/home" class="btnBackToHome">Trở về trang chủ</a>
+        	<a href="${pageContext.request.contextPath}/home" class="btnBackToHome">Trở về trang chủ</a>
             <div style="display: flex; align-items: center; flex-direction: column;">
-                <a href="" class="btn btn-primary btnAdd">Thêm sản phẩm</a>
+                <a href="${pageContext.request.contextPath}/api/add-product" class="btn btn-primary text-center btnAdd">Thêm sản phẩm</a>
 				<table border="1" class="table table-bordered">
 					<tr>
 						<th class="align-middle text-center" style="width: 80px;">Mã sản phẩm</th>
 						<th class="align-middle text-center" style="width: 300px;">Tên sản phẩm</th>
 						<th class="align-middle text-center">Hình ảnh</th>
-						<th class="align-middle text-center" style="width: 450px;">Chi tiết sản phẩm</th>
+						<th class="align-middle text-center" style="width: 450px;">Mô tả sản phẩm</th>
 						<th class="align-middle text-center">Giá</th>
 						<th class="align-middle text-center"><input type="submit" value="Xóa" class="btn btn-danger align-items-center"></th>
 						<th class="align-middle text-center"></th>

@@ -33,4 +33,10 @@ public class ModelProductControllers {
 		
 		return "product";
 	}
+	
+	@GetMapping("/api/add-product")
+	public String formAddPrd() {
+		
+		return "form-add-product";
+	}
 }
