@@ -48,7 +48,7 @@ public class ModelProductControllers {
 	
 	@GetMapping("/api/handleAddProduct")
 	public String handleCreateProduct(@Valid @ModelAttribute("product") Product product) {
-		String linkImg = "/images/" +product.getLink();
+		String linkImg = "images/" +product.getLink();
 		product.setLink(linkImg);
 		product.setPrice(dfPrice.format(Double.parseDouble(product.getPrice())) +" ₫");
 		product.setStatusPrd("true");
