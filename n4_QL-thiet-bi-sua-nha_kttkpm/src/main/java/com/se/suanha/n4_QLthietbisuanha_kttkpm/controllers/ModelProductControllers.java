@@ -31,7 +31,7 @@ public class ModelProductControllers {
 	
 	Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	
-	private DecimalFormat dfPrice = new DecimalFormat("###,###,###");
+	private DecimalFormat dfPrice = new DecimalFormat("###.###.###");
 	
 	@GetMapping("/api/products")
 	public String listProducts(Model model) {
