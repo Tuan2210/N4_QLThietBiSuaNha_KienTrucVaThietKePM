@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Thêm sản phẩm</title>
+<title>Cập nhật sản phẩm</title>
 
 <!--Bootstrap CSS-->
 <link rel="stylesheet"
@@ -58,7 +58,7 @@
                     	</br>
                     	<input type="file" name="link" placeholder="Tải ảnh lên" id="" required="required">
                     	</br>
-                    	<input type="submit" value="Thêm" class="btn-info" style="padding: 8px; margin-top: 5%; border-radius: 8px;">
+                    	<input type="submit" value="Cập nhật" class="btn-info" style="padding: 8px; margin-top: 5%; border-radius: 8px;">
                 </form:form>
             </div>
         </div>

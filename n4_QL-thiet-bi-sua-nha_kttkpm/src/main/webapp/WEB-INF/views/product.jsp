@@ -34,6 +34,7 @@
 						<th class="align-middle">Hình ảnh</th>
 						<th class="align-middle">Mô tả sản phẩm</th>
 						<th class="align-middle" style="width: 120px;">Giá</th>
+						<th class="align-middle" style="width: 180px;"></th>
 					</tr>
 					<c:forEach var="product" items="${objProducts}">
 						<tr>
@@ -46,8 +47,9 @@
 							<td class="align-middle text-center">${product.price}</td>
 							<td class="align-middle text-center">
 								<a href="${pageContext.request.contextPath}/api/handleDeleteProduct/${product.idPrd}" class="btn btn-danger align-items-center">Xóa</a>
+								<a href="${pageContext.request.contextPath}/api/update-product" class="btn btn-secondary">Cập nhật</a>
 							</td>
-							<td class="align-middle text-center"><a href="" class="btn btn-secondary">Sửa</a></td>
+							<%-- <td class="align-middle text-center"><a href="${pageContext.request.contextPath}/api/update-product" class="btn btn-secondary">Cập nhật</a></td> --%>
 						</tr>
 					</c:forEach>
 				</table>

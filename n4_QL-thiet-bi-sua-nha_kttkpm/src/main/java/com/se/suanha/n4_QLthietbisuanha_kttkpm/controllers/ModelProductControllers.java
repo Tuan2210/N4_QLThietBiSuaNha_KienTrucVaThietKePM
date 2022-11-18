@@ -66,4 +66,9 @@ public class ModelProductControllers {
 		restTemplate.delete("http://localhost:8081/api/product-service/product/" +prdId);
 		return "redirect:/api/products";
 	}
+	
+	@GetMapping("/api/update-product")
+	public String formUpdatePrd() {
+		return "form-update-product";
+	}
 }
