@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 import com.google.gson.Gson;
@@ -42,6 +44,24 @@ public class ModelCustomerControllers {
 	@GetMapping("/api/handleAddCustomer")
 	public String handleCreateCustomer(@Valid @ModelAttribute("customer") Customer customer) {
 		customerServices.addCustomer(customer);
+		return "redirect:/api/customers";
+	}
+	@RequestMapping("/api/handleDeleteCustomer/{id}")
+	public String handleDeleteCustomer (@PathVariable("id") int idCus) {
+		String url = "http://localhost:8081/api/customer-service/customers";
+		restTemplate.delete(url);
+		return "redirect:/api/customers";
+	}
+	@GetMapping("/api/update-customer")
+	public String formUpdateCus() {
+		return "form-update-customer";
+	}
+	@GetMapping("/api/handleUpdateCustomer")
+	public String handleUpdateCustomer(@Valid @ModelAttribute("customer") Customer customer) {
+		String url = "http://localhost:8081/api/customer-service/customers" + customer.getIdCus();
+		restTemplate.put(url, customer,Customer.class);
+		
+		System.out.println("Đã cập nhật thông tin khách hàng" + gson.toJson(customer));
 		return "redirect:/api/customers";
 	}
 }
