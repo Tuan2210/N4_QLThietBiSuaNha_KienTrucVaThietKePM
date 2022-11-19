@@ -49,9 +49,9 @@
             <p class="text-center"><b>Nhập thông tin theo mẫu</b></p>
             <div style="width: 100%;">
                 <form:form 
-                	action="${pageContext.request.contextPath}/api/handleAddProduct" method="get" modelAttribute="product"
+                	action="${pageContext.request.contextPath}/api/handleUpdateProduct" method="get" modelAttribute="product"
                 	class="col-3 was-validated" enctype="multipart/form-data" style="margin: 0 auto;" novalidate="novalidate">
-                    	<input type="text" name="" placeholder="Nhập mã sản phẩm" id="" class="form-control" required="required">
+                    	<input type="text" name="idPrd" placeholder="Nhập mã sản phẩm" id="" class="form-control" required="required">
 	                    </br>
                     	<input type="text" name="title" placeholder="Nhập tên" id="" class="form-control" required="required">
                     	</br>

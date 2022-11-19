@@ -60,7 +60,7 @@ public class ModelProductControllers {
 		String url = "http://localhost:8081/api/product-service/product/add";
 		restTemplate.postForObject(url, product, Product.class);
 		
-		System.out.println("Đã thêm sản phẩm: " +product);
+		System.out.println("Đã thêm sản phẩm: " +gson.toJson(product));
 		return "redirect:/api/products";
 	}
 	
@@ -83,11 +83,10 @@ public class ModelProductControllers {
 		product.setPrice(dfPrice.format(Double.parseDouble(product.getPrice())) +" ₫");
 		product.setStatusPrd("true");
 		
-//		productServices.addProduct(product);
-		String url = "http://localhost:8081/api/product-service/product/add";
-		restTemplate.postForObject(url, product, Product.class);
+		String url = "http://localhost:8081/api/product-service/product/" +product.getIdPrd();
+		restTemplate.put(url, product, Product.class);
 		
-		System.out.println("Đã thêm sản phẩm: " +product);
+		System.out.println("Đã cập nhật sản phẩm: " +gson.toJson(product));
 		return "redirect:/api/products";
 	}
 }
