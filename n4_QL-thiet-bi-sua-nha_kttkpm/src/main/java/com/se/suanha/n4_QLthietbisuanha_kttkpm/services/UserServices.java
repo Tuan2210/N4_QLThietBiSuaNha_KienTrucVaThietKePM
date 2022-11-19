@@ -21,4 +21,16 @@ public class UserServices {
 	public User findUserById(int idUser) {
 		return userRepository.findUserById(idUser);
 	}
+	
+	public User addUser(User user) {
+		return userRepository.save(user);
+	}
+	
+	public void deleteUser (User user) {
+		userRepository.delete(user);
+	}
+	
+	public User updateUser (User user) {
+		return userRepository.save(user);
+	}
 }
