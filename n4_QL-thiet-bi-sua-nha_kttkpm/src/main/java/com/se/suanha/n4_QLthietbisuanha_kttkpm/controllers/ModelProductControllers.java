@@ -31,16 +31,16 @@ public class ModelProductControllers {
 	
 	Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	
-	private DecimalFormat dfPrice = new DecimalFormat("###.###.###");
+	private DecimalFormat dfPrice = new DecimalFormat("###,###,###");
 	
 	@GetMapping("/api/products")
 	public String listProducts(Model model) {
 		String url = "http://localhost:8081/api/product-service/products";
+		
 		Object[] objPrds = restTemplate.getForObject(url, Object[].class);
 		model.addAttribute("objProducts", objPrds);
+		
 		System.out.println("Danh sách tất cả sản phẩm:\n" +gson.toJson(Arrays.asList(objPrds)));
-		
-		
 		return "product";
 	}
 	
@@ -56,19 +56,38 @@ public class ModelProductControllers {
 		product.setPrice(dfPrice.format(Double.parseDouble(product.getPrice())) +" ₫");
 		product.setStatusPrd("true");
 		
-		productServices.addProduct(product);
+//		productServices.addProduct(product);
+		String url = "http://localhost:8081/api/product-service/product/add";
+		restTemplate.postForObject(url, product, Product.class);
+		
 		System.out.println("Đã thêm sản phẩm: " +product);
 		return "redirect:/api/products";
 	}
 	
 	@RequestMapping("/api/handleDeleteProduct/{id}")
 	public String handleDeleteProduct(@PathVariable("id") int prdId) {
-		restTemplate.delete("http://localhost:8081/api/product-service/product/" +prdId);
+		String url = "http://localhost:8081/api/product-service/product/" +prdId;
+		restTemplate.delete(url);
 		return "redirect:/api/products";
 	}
 	
 	@GetMapping("/api/update-product")
 	public String formUpdatePrd() {
 		return "form-update-product";
+	}
+	
+	@GetMapping("/api/handleUpdateProduct")
+	public String handleUpdateProduct(@Valid @ModelAttribute("product") Product product) {
+		String linkImg = "images/" +product.getLink();
+		product.setLink(linkImg);
+		product.setPrice(dfPrice.format(Double.parseDouble(product.getPrice())) +" ₫");
+		product.setStatusPrd("true");
+		
+//		productServices.addProduct(product);
+		String url = "http://localhost:8081/api/product-service/product/add";
+		restTemplate.postForObject(url, product, Product.class);
+		
+		System.out.println("Đã thêm sản phẩm: " +product);
+		return "redirect:/api/products";
 	}
 }

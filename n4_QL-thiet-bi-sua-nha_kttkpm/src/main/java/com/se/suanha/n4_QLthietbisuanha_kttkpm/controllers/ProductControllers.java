@@ -3,10 +3,12 @@ package com.se.suanha.n4_QLthietbisuanha_kttkpm.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,10 +29,10 @@ public class ProductControllers {
 	}
 	
 	@GetMapping("/product/{id}")
-	public Product findByIntId(@PathVariable("id") int idPrd) throws Exception {
-		Product product = productServices.findByIntId(idPrd);
-//		Product product = productServices.findById("'" +idPrd +"'")
-//										 .orElseThrow(() -> new Exception("Không tìm thấy sản phẩm có mã: " +idPrd));
+	public Product findByIntId(@PathVariable("id") int prdId) throws Exception {
+		Product product = productServices.findByIntId(prdId);
+//		Product product = productServices.findById("'" +prdId +"'")
+//										 .orElseThrow(() -> new Exception("Không tìm thấy sản phẩm có mã: " +prdId));
 		return product;
 	}
 	
@@ -40,10 +42,23 @@ public class ProductControllers {
 	}
 	
 	@DeleteMapping("/product/{id}")
-	public void deleteProduct(@PathVariable("id") int idPrd) {
-		Product product = productServices.findByIntId(idPrd);
+	public void deleteProduct(@PathVariable("id") int prdId) {
+		Product product = productServices.findByIntId(prdId);
 		productServices.deleteProduct(product);
-		System.out.println("Đã xóa sản phẩm có mã: " +idPrd);
+		System.out.println("Đã xóa sản phẩm có mã: " +prdId);
 	}
 
+	@PutMapping("/product/{id}")
+	public ResponseEntity<Product> updateProduct(@PathVariable("id") int prdId, @RequestBody Product product) {
+		Product newPrd = productServices.findByIntId(prdId);
+		newPrd.setTitle(product.getTitle());
+		newPrd.setPrice(product.getPrice());
+		newPrd.setDescribeDetails(product.getDescribeDetails());
+		newPrd.setLink(product.getLink());
+		newPrd.setStatusPrd("true");
+		
+		productServices.updateProduct(newPrd);
+		return ResponseEntity.ok().body(newPrd);
+	}
+	
 }
