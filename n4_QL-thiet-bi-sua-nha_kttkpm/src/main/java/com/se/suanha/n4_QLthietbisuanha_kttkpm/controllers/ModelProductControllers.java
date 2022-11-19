@@ -20,6 +20,9 @@ import com.google.gson.GsonBuilder;
 import com.se.suanha.n4_QLthietbisuanha_kttkpm.models.Product;
 import com.se.suanha.n4_QLthietbisuanha_kttkpm.services.ProductServices;
 
+//link crud rest-template:
+//https://www.javaguides.net/2019/02/spring-resttemplate-spring-rest-client-get-post-put-delete-example.html
+
 @Controller
 public class ModelProductControllers {
 	
