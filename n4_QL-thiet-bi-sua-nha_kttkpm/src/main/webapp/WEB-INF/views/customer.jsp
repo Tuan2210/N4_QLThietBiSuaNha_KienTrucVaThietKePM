@@ -32,8 +32,7 @@
 						<th>Số điện thoại</th>
 						<th>Giới tính</th>
 						<th style="width: 80px;">Mã người dùng</th>
-						<th style="width: 80px;"><input type="submit" value="Xóa" class="btn btn-danger align-items-center"></th>
-						<th style="width: 80px;"></th>
+						<th style="width: 80px;">Hành động</th>
 					</tr>
 					<c:forEach var="customer" items="${objCustomers}">
 						<tr>
@@ -43,11 +42,9 @@
 							<td class="align-middle text-justify">${customer.sex}</td>
 							<td class="align-middle text-center">${customer.idUser}</td>
 							<td class="align-middle text-center">
-								<div class="row justify-content-center">
-									<input type="checkbox" name="">
-								</div>
+								<a href="${pageContext.request.contextPath}/api/handleDeleteCustomer/${customer.idCus}" class="btn btn-danger align-items-center">Xóa</a>
+								<a href="${pageContext.request.contextPath}/api/update-customer" class="btn btn-secondary">Cập nhật</a>
 							</td>
-							<td class="align-middle text-center"><a href="" class="btn btn-secondary">Sửa</a></td>
 						</tr>
 					</c:forEach>
 				</table>

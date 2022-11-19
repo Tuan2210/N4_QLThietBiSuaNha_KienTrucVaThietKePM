@@ -48,7 +48,7 @@ public class ModelCustomerControllers {
 	}
 	@RequestMapping("/api/handleDeleteCustomer/{id}")
 	public String handleDeleteCustomer (@PathVariable("id") int idCus) {
-		String url = "http://localhost:8081/api/customer-service/customers";
+		String url = "http://localhost:8081/api/customer-service/customers" + idCus;
 		restTemplate.delete(url);
 		return "redirect:/api/customers";
 	}
