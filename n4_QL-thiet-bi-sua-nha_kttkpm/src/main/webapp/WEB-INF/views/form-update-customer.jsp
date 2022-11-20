@@ -44,13 +44,15 @@
 		
 		<!-- content -->
         <div class="content">
-        	<a href="/api/products" class="btnBack">Trở về</a>
+        	<a href="/api/customers" class="btnBack">Trở về</a>
             
             <p class="text-center"><b>Nhập thông tin theo mẫu</b></p>
             <div style="width: 100%;">
                 <form:form 
                 	action="${pageContext.request.contextPath}/api/handleUpdateProduct" method="get" modelAttribute="product"
                 	class="col-3 was-validated" enctype="multipart/form-data" style="margin: 0 auto;" novalidate="novalidate">
+                    	<input type="text" name="idCus" placeholder="Nhập mã khách hàng" id="" class="form-control" required="required">
+                    	</br>
                     	<input type="text" name="cusName" placeholder="Nhập tên khách hàng" id="" class="form-control" required="required">
                     	</br>
                     	<input type="text" name="phone" placeholder="Nhập Số điện thoại" id="" class="form-control" required="required">
