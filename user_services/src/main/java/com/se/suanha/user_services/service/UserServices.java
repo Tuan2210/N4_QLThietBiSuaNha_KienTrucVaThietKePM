@@ -1,12 +1,12 @@
-package com.se.suanha.n4_QLthietbisuanha_kttkpm.services;
+package com.se.suanha.user_services.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.se.suanha.n4_QLthietbisuanha_kttkpm.models.User;
-import com.se.suanha.n4_QLthietbisuanha_kttkpm.repositories.UserRepository;
+import com.se.suanha.user_services.model.User;
+import com.se.suanha.user_services.repository.UserRepository;
 
 @Service
 public class UserServices {

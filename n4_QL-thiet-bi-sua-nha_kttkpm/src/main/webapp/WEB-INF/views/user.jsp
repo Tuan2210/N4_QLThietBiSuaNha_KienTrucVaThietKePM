@@ -43,7 +43,7 @@
 							<!-- <td class="align-middle text-center" style="width: 200px; height: 200px;">
 								<img alt="" src="/resources/${product.link}" class="align-middle" width="200" height="200">
 							</td> -->
-							<td class="align-middle text-justify">${user.userName}</td>
+							<td class="align-middle text-justify">${user.password}</td>
 							<!-- <td class="align-middle text-center">${product.price}</td> -->
 						<!--  	<td class="align-middle text-center">
 								<div class="row justify-content-center">

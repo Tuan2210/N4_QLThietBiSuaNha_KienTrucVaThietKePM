@@ -1,7 +1,6 @@
 package com.se.suanha.n4_QLthietbisuanha_kttkpm.controllers;
 
 import java.text.DecimalFormat;
-import java.util.Arrays;
 
 import javax.validation.Valid;
 
@@ -11,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
@@ -93,7 +91,7 @@ public class ModelProductControllers {
 		restTemplate.put(urlGateway, product, Product.class);
 		
 //		System.out.println("Đã cập nhật sản phẩm: " +gson.toJson(product));
-		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => cập nhật sản phẩm");
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => cập nhật thông tin sản phẩm");
 		return "redirect:/api/products";
 	}
 }

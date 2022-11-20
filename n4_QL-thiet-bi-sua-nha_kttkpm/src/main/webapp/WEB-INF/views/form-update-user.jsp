@@ -14,6 +14,25 @@
 	crossorigin="anonymous">
 
 <link rel="stylesheet" href="/resources/css/customer.css">
+<style type="text/css">
+	.btnBack {
+		text-decoration: none;
+		background-color: black;
+		border: 2px solid cyan;
+		border-radius: 10px;
+		color: cyan;
+		display: inline-block;
+		font-size: 1em;
+		padding: 8px;
+		transition: 0.35s;
+	}
+
+	.btnBack:hover {
+		text-decoration: none;
+		background-color: white;
+		color: black;
+	}
+</style>
 
 </head>
 <body>
@@ -25,13 +44,13 @@
 		
 		<!-- content -->
         <div class="content">
-        	<a href="/home" class="btnBackToHome">Trở về trang chủ</a>
+        	<a href="/api/users" class="btnBack">Trở về</a>
             <p class="text-center"><b>Nhập thông tin theo mẫu</b></p>
             <div style="width: 100%;">
                 <form:form 
                 	action="${pageContext.request.contextPath}/api/handleUpdateUser" method="get" modelAttribute="user"
                 	class="col-3 was-validated" enctype="multipart/form-data" style="margin: 0 auto;" novalidate="novalidate">
-                		<input type="text" name="idUser" placeholder="Nhập Username" id="" class="form-control" required="required">
+                		<input type="text" name="idUser" placeholder="Nhập Userid" id="" class="form-control" required="required">
                     	</br>
                     	<input type="text" name="userName" placeholder="Nhập Username" id="" class="form-control" required="required">
                     	</br>
