@@ -18,7 +18,6 @@ import org.springframework.web.client.RestTemplate;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.se.suanha.n4_QLthietbisuanha_kttkpm.models.Product;
-import com.se.suanha.n4_QLthietbisuanha_kttkpm.services.ProductServices;
 
 //link crud rest-template:
 //https://www.javaguides.net/2019/02/spring-resttemplate-spring-rest-client-get-post-put-delete-example.html
@@ -28,22 +27,21 @@ public class ModelProductControllers {
 	
 	@Autowired
 	private RestTemplate restTemplate;
-	
-	@Autowired
-	private ProductServices productServices;
-	
+		
 	Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	
 	private DecimalFormat dfPrice = new DecimalFormat("###,###,###");
 	
 	@GetMapping("/api/products")
 	public String listProducts(Model model) {
-		String url = "http://localhost:8081/api/product-service/products";
+//		String url = "http://localhost:8081/api/product-service/products";
+		String urlGateway = "http://localhost:8082/api/product-service/products";
 		
-		Object[] objPrds = restTemplate.getForObject(url, Object[].class);
+		Object[] objPrds = restTemplate.getForObject(urlGateway, Object[].class);
 		model.addAttribute("objProducts", objPrds);
 		
-		System.out.println("Danh sách tất cả sản phẩm:\n" +gson.toJson(Arrays.asList(objPrds)));
+//		System.out.println("Danh sách tất cả sản phẩm:\n" +gson.toJson(Arrays.asList(objPrds)));
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => danh sách sản phẩm");
 		return "product";
 	}
 	
@@ -59,18 +57,22 @@ public class ModelProductControllers {
 		product.setPrice(dfPrice.format(Double.parseDouble(product.getPrice())) +" ₫");
 		product.setStatusPrd("true");
 		
-//		productServices.addProduct(product);
-		String url = "http://localhost:8081/api/product-service/product/add";
-		restTemplate.postForObject(url, product, Product.class);
+//		String url = "http://localhost:8081/api/product-service/product/add";
+		String urlGateway = "http://localhost:8082/api/product-service/product/add";
+		restTemplate.postForObject(urlGateway, product, Product.class);
 		
-		System.out.println("Đã thêm sản phẩm: " +gson.toJson(product));
+//		System.out.println("Đã thêm sản phẩm: " +gson.toJson(product));
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => thêm sản phẩm");
 		return "redirect:/api/products";
 	}
 	
 	@RequestMapping("/api/handleDeleteProduct/{id}")
 	public String handleDeleteProduct(@PathVariable("id") int prdId) {
-		String url = "http://localhost:8081/api/product-service/product/" +prdId;
-		restTemplate.delete(url);
+//		String url = "http://localhost:8081/api/product-service/product/" +prdId;
+		String urlGateway = "http://localhost:8082/api/product-service/product/" +prdId;
+		restTemplate.delete(urlGateway);
+		
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => xóa sản phẩm");
 		return "redirect:/api/products";
 	}
 	
@@ -86,10 +88,12 @@ public class ModelProductControllers {
 		product.setPrice(dfPrice.format(Double.parseDouble(product.getPrice())) +" ₫");
 		product.setStatusPrd("true");
 		
-		String url = "http://localhost:8081/api/product-service/product/" +product.getIdPrd();
-		restTemplate.put(url, product, Product.class);
+//		String url = "http://localhost:8081/api/product-service/product/" +product.getIdPrd();
+		String urlGateway = "http://localhost:8082/api/product-service/product/" +product.getIdPrd();
+		restTemplate.put(urlGateway, product, Product.class);
 		
-		System.out.println("Đã cập nhật sản phẩm: " +gson.toJson(product));
+//		System.out.println("Đã cập nhật sản phẩm: " +gson.toJson(product));
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => cập nhật sản phẩm");
 		return "redirect:/api/products";
 	}
 }

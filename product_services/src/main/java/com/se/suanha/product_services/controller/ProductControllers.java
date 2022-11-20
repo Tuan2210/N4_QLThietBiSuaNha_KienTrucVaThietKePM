@@ -17,7 +17,7 @@ import com.se.suanha.product_services.model.Product;
 import com.se.suanha.product_services.service.ProductServices;
 
 @RestController
-@RequestMapping("/product-service")
+@RequestMapping("/api/product-service")
 public class ProductControllers {
 	
 	@Autowired
