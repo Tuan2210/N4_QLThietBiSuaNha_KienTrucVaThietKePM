@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quản lý sản phẩm</title>
+<title>Quản lý người dùng</title>
 
 <!--Bootstrap CSS-->
 <link rel="stylesheet"
@@ -26,7 +26,7 @@
         <div class="content">
         	<a href="${pageContext.request.contextPath}/home" class="btnBackToHome">Trở về trang chủ</a>
             <div style="display: flex; align-items: center; flex-direction: column;">
-                <a href="${pageContext.request.contextPath}/api/add-users" class="btn btn-primary text-center btnAdd">Thêm sản phẩm</a>
+                <a href="${pageContext.request.contextPath}/api/add-users" class="btn btn-primary text-center btnAdd">Thêm người dùng</a>
 				<table border="1" class="table table-bordered">
 					<tr class="align-middle text-center">
 						<th style="width: 80px;">User id</th>
