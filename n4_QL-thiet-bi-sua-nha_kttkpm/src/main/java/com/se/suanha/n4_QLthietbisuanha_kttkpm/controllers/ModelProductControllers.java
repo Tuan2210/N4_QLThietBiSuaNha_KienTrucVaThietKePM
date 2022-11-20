@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
@@ -41,6 +42,30 @@ public class ModelProductControllers {
 //		System.out.println("Danh sách tất cả sản phẩm:\n" +gson.toJson(Arrays.asList(objPrds)));
 		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => danh sách sản phẩm");
 		return "product";
+	}
+	
+	@GetMapping("/api/find-product")
+	public String findPrd() {
+		return "find-product";
+	}
+	
+	@GetMapping("/api/handleFindProduct/{id}")
+	public String findProduct(@PathVariable("id") int prdId, Model theModel) {
+//		if(product != null) {
+			String urlGateway = "http://localhost:8082/api/product-service/product/" +prdId;
+			Object theProduct = restTemplate.getForObject(urlGateway, Object.class);
+			theModel.addAttribute("findProduct", theProduct);
+			System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => tìm sản phẩm theo mã");
+			System.out.println(gson.toJson(theProduct));
+//		}
+		
+//		else {
+//			String urlGateway = "http://localhost:8082/api/product-service/products";
+//			Object[] objPrds = restTemplate.getForObject(urlGateway, Object[].class);
+//			model.addAttribute("objProducts", objPrds);
+//			System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => không tìm đc sản phẩm");
+//		}
+		return "find-product";
 	}
 	
 	@GetMapping("/api/add-product")

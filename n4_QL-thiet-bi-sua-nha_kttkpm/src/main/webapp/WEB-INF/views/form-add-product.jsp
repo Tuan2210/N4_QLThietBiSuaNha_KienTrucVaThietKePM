@@ -44,7 +44,7 @@
 		
 		<!-- content -->
         <div class="content">
-        	<a href="/api/products" class="btnBack">Trở về</a>
+        	<a href="${pageContext.request.contextPath}/api/products" class="btnBack">Trở về</a>
             <p class="text-center"><b>Nhập thông tin theo mẫu</b></p>
             <div style="width: 100%;">
                 <form:form 
