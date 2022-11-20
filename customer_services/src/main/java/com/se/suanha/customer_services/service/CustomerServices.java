@@ -1,16 +1,16 @@
-package com.se.suanha.n4_QLthietbisuanha_kttkpm.services;
+package com.se.suanha.customer_services.service;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+//import org.springframework.web.client.RestTemplate;
 
-import com.se.suanha.n4_QLthietbisuanha_kttkpm.models.Customer;
-import com.se.suanha.n4_QLthietbisuanha_kttkpm.models.ResponseTemplateDTO;
-import com.se.suanha.n4_QLthietbisuanha_kttkpm.models.User;
-import com.se.suanha.n4_QLthietbisuanha_kttkpm.repositories.CustomerRepository;
+import com.se.suanha.customer_services.model.Customer;
+//import com.se.suanha.customer_services.model.ResponseTemplateDTO;
+//import com.se.suanha.customer_services.model.User;
+import com.se.suanha.customer_services.repository.CustomerRepository;
 
 @Service
 public class CustomerServices {
@@ -18,18 +18,18 @@ public class CustomerServices {
 	@Autowired
 	private CustomerRepository customerRepository;
 	
-	@Autowired
-	private RestTemplate restTemplate;
+//	@Autowired
+//	private RestTemplate restTemplate;
 	
 	public List<Customer> listCustomers() {
 		return customerRepository.findAll();
 	}
 	
-	public ResponseTemplateDTO getCustomerWithUser(int idCus) {
-		Customer customer = customerRepository.findCusById(idCus);
-		User user = restTemplate.getForObject("http://localhost:8081/api/user-service/user/" +customer.getIdUser(), User.class);
-		return new ResponseTemplateDTO(customer, user);
-	}
+//	public ResponseTemplateDTO getCustomerWithUser(int idCus) {
+//		Customer customer = customerRepository.findCusById(idCus);
+//		User user = restTemplate.getForObject("http://USER-SERVICES/api/user-service/user/" +customer.getIdUser(), User.class);
+//		return new ResponseTemplateDTO(customer, user);
+//	}
 	
 	public Customer findByIntId(int id) {
 		return customerRepository.findCusById(id);

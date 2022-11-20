@@ -1,4 +1,4 @@
-package com.se.suanha.n4_QLthietbisuanha_kttkpm.controllers;
+package com.se.suanha.customer_services.controller;
 
 import java.util.List;
 
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.se.suanha.n4_QLthietbisuanha_kttkpm.models.Customer;
-import com.se.suanha.n4_QLthietbisuanha_kttkpm.models.ResponseTemplateDTO;
-import com.se.suanha.n4_QLthietbisuanha_kttkpm.services.CustomerServices;
+import com.se.suanha.customer_services.model.Customer;
+import com.se.suanha.customer_services.model.ResponseTemplateDTO;
+import com.se.suanha.customer_services.service.CustomerServices;
 
 @RestController
 @RequestMapping("/api/customer-service")
@@ -29,16 +29,11 @@ public class CustomerController {
 		return customerServices.listCustomers();
 	}
 	
-	@GetMapping("/customer/{id}")
-	public ResponseTemplateDTO getCustomerWithUser(@PathVariable("id") int idCus) {
-		return customerServices.getCustomerWithUser(idCus);
-	}
-//	
 //	@GetMapping("/customer/{id}")
-//	public Customer findByIntId(@PathVariable("id") int idCus) {
-//		Customer customer = customerServices.findByIntId(idCus);
-//		return customer;
+//	public ResponseTemplateDTO getCustomerWithUser(@PathVariable("id") int idCus) {
+//		return customerServices.getCustomerWithUser(idCus);
 //	}
+
 	@PostMapping("/customer/add")
 	public Customer addCustomer(@RequestBody Customer customer) {
 		return customerServices.addCustomer(customer);

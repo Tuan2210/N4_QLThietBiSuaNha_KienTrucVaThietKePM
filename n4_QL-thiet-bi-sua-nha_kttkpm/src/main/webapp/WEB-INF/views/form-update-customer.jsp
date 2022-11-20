@@ -49,7 +49,7 @@
             <p class="text-center"><b>Nhập thông tin theo mẫu</b></p>
             <div style="width: 100%;">
                 <form:form 
-                	action="${pageContext.request.contextPath}/api/handleUpdateProduct" method="get" modelAttribute="product"
+                	action="${pageContext.request.contextPath}/api/handleUpdateCustomer" method="get" modelAttribute="product"
                 	class="col-3 was-validated" enctype="multipart/form-data" style="margin: 0 auto;" novalidate="novalidate">
                     	<input type="text" name="idCus" placeholder="Nhập mã khách hàng" id="" class="form-control" required="required">
                     	</br>
@@ -58,6 +58,8 @@
                     	<input type="text" name="phone" placeholder="Nhập Số điện thoại" id="" class="form-control" required="required">
                     	</br>
                     	<input name="sex" placeholder="Nhập giới tính" id="" class="form-control" style="height: 80px;" required="required">
+                    	</br>
+                    	<input name="idUser" placeholder="Nhập mã người dùng" id="" class="form-control" style="height: 80px;" required="required">
                     	</br>
                     	<input type="submit" value="Cập nhật" class="btn-info" style="padding: 8px; margin-top: 5%; border-radius: 8px;">
                 </form:form>

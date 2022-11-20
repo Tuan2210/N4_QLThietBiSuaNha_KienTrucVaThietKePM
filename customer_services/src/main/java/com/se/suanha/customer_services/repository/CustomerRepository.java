@@ -1,10 +1,10 @@
-package com.se.suanha.n4_QLthietbisuanha_kttkpm.repositories;
+package com.se.suanha.customer_services.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.se.suanha.n4_QLthietbisuanha_kttkpm.models.Customer;
+import com.se.suanha.customer_services.model.Customer;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, String>{

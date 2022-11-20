@@ -56,7 +56,9 @@
                     	</br>
                     	<input name="sex" placeholder="Nhập giới tính" id="" class="form-control" style="height: 80px;" required="required">
                     	</br>
-                    	<input type="submit" value=" Thêm " class="btn-info" style="padding: 8px; margin-top: 5%; border-radius: 8px;">
+                    	<input name="idUser" placeholder="Nhập mã người dùng" id="" class="form-control" style="height: 80px;" required="required">
+                    	</br>
+                    	<input type="submit" value="Thêm" class="btn-info" style="padding: 8px; margin-top: 5%; border-radius: 8px;">
                 </form:form>
             </div>
         </div>

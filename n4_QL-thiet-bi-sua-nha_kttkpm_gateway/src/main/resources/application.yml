@@ -15,6 +15,10 @@ spring:
           uri: lb://PRODUCT-SERVICES
           predicates:
             - Path=/api/product-service/**
+        - id: CUSTOMER-SERVICES
+          uri: lb://CUSTOMER-SERVICES
+          predicates:
+            - Path=/api/customer-service/**
   main:
     web-application-type: reactive
 
