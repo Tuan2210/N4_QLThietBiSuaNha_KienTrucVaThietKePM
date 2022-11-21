@@ -18,8 +18,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.se.suanha.n4_QLthietbisuanha_kttkpm.models.Product;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
 //link crud rest-template:
 //https://www.javaguides.net/2019/02/spring-resttemplate-spring-rest-client-get-post-put-delete-example.html
+
+//link resilience4j: https://www.youtube.com/watch?v=9AXAUlp3DBw
 
 @Controller
 public class ModelProductControllers {
@@ -31,7 +35,10 @@ public class ModelProductControllers {
 	
 	private DecimalFormat dfPrice = new DecimalFormat("###,###,###");
 	
+//	private static final String SERVICE_GATEWAY_LIST_PRDS = "serviceListProducts";
+	
 	@GetMapping("/api/products")
+	@CircuitBreaker(name = "serviceListProducts")
 	public String listProducts(Model model) {
 //		String url = "http://localhost:8081/api/product-service/products";
 		String urlGateway = "http://localhost:8082/api/product-service/products";

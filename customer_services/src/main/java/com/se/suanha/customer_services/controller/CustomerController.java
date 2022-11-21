@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.se.suanha.customer_services.model.Customer;
 import com.se.suanha.customer_services.model.ResponseTemplateDTO;
@@ -23,6 +24,9 @@ public class CustomerController {
 	
 	@Autowired
 	private CustomerServices customerServices;
+	
+	@Autowired
+	private RestTemplate restTemplate;
 	
 	@GetMapping("/customers")
 	public List<Customer> listCustomers() {

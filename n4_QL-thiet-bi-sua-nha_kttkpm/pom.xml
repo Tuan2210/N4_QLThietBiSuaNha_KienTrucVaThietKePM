@@ -15,7 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
-		<!-- <spring-cloud.version>2021.0.5</spring-cloud.version> -->
+		<spring-cloud.version>2021.0.5</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -83,9 +83,24 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency> -->
 		
+		<!-- circuit-breaker -->
+		<dependency>
+	      <groupId>org.springframework.cloud</groupId>
+	      <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+	    </dependency>
+	    
+	    <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		
 	</dependencies>
 	
-	<!-- <dependencyManagement>
+	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
@@ -95,7 +110,7 @@
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
-	</dependencyManagement> -->
+	</dependencyManagement>
 
 	<build>
 		<plugins>

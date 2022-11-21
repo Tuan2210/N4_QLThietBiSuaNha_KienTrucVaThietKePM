@@ -4,10 +4,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
 //import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestTemplate;
 
 import com.se.suanha.customer_services.model.Customer;
+import com.se.suanha.customer_services.model.ResponseTemplateDTO;
+import com.se.suanha.customer_services.model.User;
 //import com.se.suanha.customer_services.model.ResponseTemplateDTO;
 //import com.se.suanha.customer_services.model.User;
 import com.se.suanha.customer_services.repository.CustomerRepository;
@@ -19,7 +23,8 @@ public class CustomerServices {
 	private CustomerRepository customerRepository;
 	
 //	@Autowired
-//	private RestTemplate restTemplate;
+//	@LoadBalanced
+//	private RestTemplate restTemplate; //rest-template not working in class service
 	
 	public List<Customer> listCustomers() {
 		return customerRepository.findAll();
