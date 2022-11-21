@@ -20,6 +20,7 @@ import com.google.gson.GsonBuilder;
 import com.se.suanha.n4_QLthietbisuanha_kttkpm.models.Product;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 
 //link crud rest-template:
@@ -43,6 +44,7 @@ public class ModelProductControllers {
 	@GetMapping("/api/products")
 	@CircuitBreaker(name = "serviceListProducts")
 	@Retry(name = "serviceListProducts")
+	@RateLimiter(name = "serviceListProducts")
 	public String listProducts(Model model) {
 //		String url = "http://localhost:8081/api/product-service/products";
 		String urlGateway = "http://localhost:8082/api/product-service/products";
