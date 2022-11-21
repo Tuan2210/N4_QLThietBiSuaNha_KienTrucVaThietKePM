@@ -1,6 +1,7 @@
 package com.se.suanha.n4_QLthietbisuanha_kttkpm.controllers;
 
 import java.text.DecimalFormat;
+import java.util.Date;
 
 import javax.validation.Valid;
 
@@ -19,6 +20,7 @@ import com.google.gson.GsonBuilder;
 import com.se.suanha.n4_QLthietbisuanha_kttkpm.models.Product;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 
 //link crud rest-template:
 //https://www.javaguides.net/2019/02/spring-resttemplate-spring-rest-client-get-post-put-delete-example.html
@@ -36,9 +38,11 @@ public class ModelProductControllers {
 	private DecimalFormat dfPrice = new DecimalFormat("###,###,###");
 	
 //	private static final String SERVICE_GATEWAY_LIST_PRDS = "serviceListProducts";
+	int count = 1;
 	
 	@GetMapping("/api/products")
 	@CircuitBreaker(name = "serviceListProducts")
+	@Retry(name = "serviceListProducts")
 	public String listProducts(Model model) {
 //		String url = "http://localhost:8081/api/product-service/products";
 		String urlGateway = "http://localhost:8082/api/product-service/products";
@@ -48,6 +52,7 @@ public class ModelProductControllers {
 		
 //		System.out.println("Danh sách tất cả sản phẩm:\n" +gson.toJson(Arrays.asList(objPrds)));
 		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => danh sách sản phẩm");
+		System.out.println("Retry method called " + count++ + " times at " + new Date());
 		return "product";
 	}
 	
