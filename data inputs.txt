@@ -1,0 +1,23 @@
+http://localhost:8761
+http://localhost:8081/actuator/health
+
+======
+
+user:
+vana
+abcxyz
+
+=======
+
+product:
+Xe đẩy hàng
+2150000
+Xe đẩy hàng hạng trung tối đa 300kg
+
+=======
+
+customer:
+Trần Văn A
+0912345678
+Nam
+5

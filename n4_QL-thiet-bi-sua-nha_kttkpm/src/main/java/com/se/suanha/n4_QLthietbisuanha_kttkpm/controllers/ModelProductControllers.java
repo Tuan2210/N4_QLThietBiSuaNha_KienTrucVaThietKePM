@@ -53,7 +53,7 @@ public class ModelProductControllers {
 		model.addAttribute("objProducts", objPrds);
 		
 //		System.out.println("Danh sách tất cả sản phẩm:\n" +gson.toJson(Arrays.asList(objPrds)));
-		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => danh sách sản phẩm");
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8084 PRODUCT-SERVICES => danh sách sản phẩm");
 		System.out.println("Retry method called " + count++ + " times at " + new Date());
 		return "product";
 	}
@@ -69,7 +69,7 @@ public class ModelProductControllers {
 			String urlGateway = "http://localhost:8082/api/product-service/product/" +prdId;
 			Object theProduct = restTemplate.getForObject(urlGateway, Object.class);
 			theModel.addAttribute("findProduct", theProduct);
-			System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => tìm sản phẩm theo mã");
+			System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8084 PRODUCT-SERVICES => tìm sản phẩm theo mã");
 			System.out.println(gson.toJson(theProduct));
 //		}
 		
@@ -77,7 +77,7 @@ public class ModelProductControllers {
 //			String urlGateway = "http://localhost:8082/api/product-service/products";
 //			Object[] objPrds = restTemplate.getForObject(urlGateway, Object[].class);
 //			model.addAttribute("objProducts", objPrds);
-//			System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => không tìm đc sản phẩm");
+//			System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8084 PRODUCT-SERVICES => không tìm đc sản phẩm");
 //		}
 		return "find-product";
 	}
@@ -99,7 +99,7 @@ public class ModelProductControllers {
 		restTemplate.postForObject(urlGateway, product, Product.class);
 		
 //		System.out.println("Đã thêm sản phẩm: " +gson.toJson(product));
-		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => thêm sản phẩm");
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8084 PRODUCT-SERVICES => thêm sản phẩm");
 		return "redirect:/api/products";
 	}
 	
@@ -109,7 +109,7 @@ public class ModelProductControllers {
 		String urlGateway = "http://localhost:8082/api/product-service/product/" +prdId;
 		restTemplate.delete(urlGateway);
 		
-		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => xóa sản phẩm");
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8084 PRODUCT-SERVICES => xóa sản phẩm");
 		return "redirect:/api/products";
 	}
 	
@@ -130,7 +130,7 @@ public class ModelProductControllers {
 		restTemplate.put(urlGateway, product, Product.class);
 		
 //		System.out.println("Đã cập nhật sản phẩm: " +gson.toJson(product));
-		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 PRODUCT-SERVICES => cập nhật thông tin sản phẩm");
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8084 PRODUCT-SERVICES => cập nhật thông tin sản phẩm");
 		return "redirect:/api/products";
 	}
 }

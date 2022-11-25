@@ -33,7 +33,7 @@ public class ModelCustomerControllers {
 		model.addAttribute("objCustomers", objCus);
 		
 //		System.out.println("Danh sách khách hàng: \n" +gson.toJson(Arrays.asList(objCus)));
-		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 CUSTOMER-SERVICES => danh sách khách hàng");
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8085 CUSTOMER-SERVICES => danh sách khách hàng");
 		return "customer";
 	}
 	@GetMapping("/api/add-customer")
@@ -47,7 +47,7 @@ public class ModelCustomerControllers {
 		String urlGateway = "http://localhost:8082/api/customer-service/customer/add";
 		restTemplate.postForObject(urlGateway, customer, Customer.class);
 		
-		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 CUSTOMER-SERVICES => thêm khách hàng");
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8085 CUSTOMER-SERVICES => thêm khách hàng");
 		return "redirect:/api/customers";
 	}
 	@RequestMapping("/api/handleDeleteCustomer/{id}")
@@ -56,7 +56,7 @@ public class ModelCustomerControllers {
 		String urlGateway = "http://localhost:8082/api/customer-service/customer/" + idCus;
 		restTemplate.delete(urlGateway);
 		
-		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 CUSTOMER-SERVICES => xóa khách hàng");
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8085 CUSTOMER-SERVICES => xóa khách hàng");
 		return "redirect:/api/customers";
 	}
 	@GetMapping("/api/update-customer")
@@ -70,7 +70,7 @@ public class ModelCustomerControllers {
 		restTemplate.put(urlGateway, customer,Customer.class);
 		
 //		System.out.println("Đã cập nhật thông tin khách hàng" + gson.toJson(customer));
-		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8083 CUSTOMER-SERVICES => cập nhật thông tin khách hàng");
+		System.out.println("Cổng 8081 => cổng 8082 gateway => cổng 8085 CUSTOMER-SERVICES => cập nhật thông tin khách hàng");
 		return "redirect:/api/customers";
 	}
 }
